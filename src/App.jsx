@@ -3,6 +3,9 @@ import { AuthProvider, useAuth } from './context/AuthContext.jsx'
 import HomePage from './pages/HomePage.jsx'
 import QuizPage from './pages/QuizPage.jsx'
 import ChallengeParent from './pages/ChallengeParent.jsx'
+import TimedChallengePage from './pages/TimedChallengePage.jsx'
+import WrongQuestionsPage from './pages/WrongQuestionsPage.jsx'
+import ParentDashboard from './pages/ParentDashboard.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import './App.css'
 
@@ -33,6 +36,9 @@ function AppRoutes() {
       <Route path="/" element={<HomePage />} />
       <Route path="/quiz/:topic" element={<QuizPage />} />
       <Route path="/challenge" element={<ChallengeParent />} />
+      <Route path="/timed-challenge" element={<TimedChallengePage />} />
+      <Route path="/wrong-questions" element={<WrongQuestionsPage />} />
+      <Route path="/parent-dashboard" element={<ParentDashboard />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )

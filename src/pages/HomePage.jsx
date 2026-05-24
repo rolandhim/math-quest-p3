@@ -98,6 +98,81 @@ export default function HomePage() {
       <Link to="/challenge" className="challenge-btn" style={{ textDecoration: 'none' }}>
         😄 出題考爸爸/媽媽
       </Link>
+
+      {/* Timed Challenge Button */}
+      <Link
+        to="/timed-challenge"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 10,
+          width: '100%',
+          padding: 18,
+          marginTop: 12,
+          fontSize: 18,
+          fontWeight: 800,
+          background: 'linear-gradient(135deg, var(--purple), var(--pink))',
+          color: 'white',
+          border: 'none',
+          borderRadius: 'var(--radius)',
+          cursor: 'pointer',
+          boxShadow: 'var(--shadow-big)',
+          textDecoration: 'none',
+        }}
+      >
+        ⚡ 限時挑戰 (60秒)
+      </Link>
+
+      {/* Wrong Questions Link */}
+      <Link
+        to="/wrong-questions"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 8,
+          width: '100%',
+          padding: '14px',
+          marginTop: 12,
+          fontSize: 16,
+          fontWeight: 700,
+          color: 'var(--red)',
+          background: 'var(--bg-card)',
+          border: '2px solid var(--red)',
+          borderRadius: 'var(--radius)',
+          cursor: 'pointer',
+          textDecoration: 'none',
+          boxShadow: 'var(--shadow)',
+        }}
+      >
+        ❌ 錯題複習
+      </Link>
+
+      {/* Parent Dashboard Link */}
+      <Link
+        to="/parent-dashboard"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 8,
+          width: '100%',
+          padding: '14px',
+          marginTop: 12,
+          fontSize: 16,
+          fontWeight: 700,
+          color: 'var(--text-light)',
+          background: 'var(--bg-card)',
+          border: '2px solid var(--text-light)',
+          borderRadius: 'var(--radius)',
+          cursor: 'pointer',
+          textDecoration: 'none',
+          boxShadow: 'var(--shadow)',
+        }}
+      >
+        👨‍👩‍👧 家長
+      </Link>
     </div>
   )
 }
