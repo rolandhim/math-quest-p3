@@ -124,6 +124,31 @@ export default function HomePage() {
         ⚡ 限時挑戰 (60秒)
       </Link>
 
+      {/* Clock Playground Button */}
+      <Link
+        to="/clock"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 10,
+          width: '100%',
+          padding: 18,
+          marginTop: 12,
+          fontSize: 18,
+          fontWeight: 800,
+          background: 'linear-gradient(135deg, #7C3AED, #A855F7)',
+          color: 'white',
+          border: 'none',
+          borderRadius: 'var(--radius)',
+          cursor: 'pointer',
+          boxShadow: 'var(--shadow-big)',
+          textDecoration: 'none',
+        }}
+      >
+        🕐 時鐘樂園
+      </Link>
+
       {/* Wrong Questions Link */}
       <Link
         to="/wrong-questions"

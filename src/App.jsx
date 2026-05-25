@@ -6,6 +6,7 @@ import ChallengeParent from './pages/ChallengeParent.jsx'
 import TimedChallengePage from './pages/TimedChallengePage.jsx'
 import WrongQuestionsPage from './pages/WrongQuestionsPage.jsx'
 import ParentDashboard from './pages/ParentDashboard.jsx'
+import ClockPage from './pages/ClockPage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import './App.css'
 
@@ -39,6 +40,7 @@ function AppRoutes() {
       <Route path="/timed-challenge" element={<TimedChallengePage />} />
       <Route path="/wrong-questions" element={<WrongQuestionsPage />} />
       <Route path="/parent-dashboard" element={<ParentDashboard />} />
+      <Route path="/clock" element={<ClockPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
