@@ -149,6 +149,31 @@ export default function HomePage() {
         🕐 時鐘樂園
       </Link>
 
+      {/* Multiplication Playground Button */}
+      <Link
+        to="/multiplication"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 10,
+          width: '100%',
+          padding: 18,
+          marginTop: 12,
+          fontSize: 18,
+          fontWeight: 800,
+          background: 'linear-gradient(135deg, #FF8C42, #FF6B6B)',
+          color: 'white',
+          border: 'none',
+          borderRadius: 'var(--radius)',
+          cursor: 'pointer',
+          boxShadow: 'var(--shadow-big)',
+          textDecoration: 'none',
+        }}
+      >
+        🔢 乘法表樂園
+      </Link>
+
       {/* Wrong Questions Link */}
       <Link
         to="/wrong-questions"
