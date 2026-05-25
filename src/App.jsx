@@ -8,6 +8,12 @@ import WrongQuestionsPage from './pages/WrongQuestionsPage.jsx'
 import ParentDashboard from './pages/ParentDashboard.jsx'
 import ClockPage from './pages/ClockPage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
+import MultiplicationPage from './pages/MultiplicationPage.jsx'
+import SongPage from './pages/multiplication/SongPage.jsx'
+import MatchPage from './pages/multiplication/MatchPage.jsx'
+import MonsterPage from './pages/multiplication/MonsterPage.jsx'
+import ColoringPage from './pages/multiplication/ColoringPage.jsx'
+import DailyChallengePage from './pages/multiplication/DailyChallengePage.jsx'
 import './App.css'
 
 function LoadingScreen() {
@@ -41,6 +47,12 @@ function AppRoutes() {
       <Route path="/wrong-questions" element={<WrongQuestionsPage />} />
       <Route path="/parent-dashboard" element={<ParentDashboard />} />
       <Route path="/clock" element={<ClockPage />} />
+      <Route path="/multiplication" element={<MultiplicationPage />} />
+      <Route path="/multiplication/song" element={<SongPage />} />
+      <Route path="/multiplication/match" element={<MatchPage />} />
+      <Route path="/multiplication/monster" element={<MonsterPage />} />
+      <Route path="/multiplication/coloring" element={<ColoringPage />} />
+      <Route path="/multiplication/daily" element={<DailyChallengePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )

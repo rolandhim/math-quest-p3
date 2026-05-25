@@ -88,6 +88,56 @@ const achievements = [
       )
     },
   },
+  // ── Multiplication achievements ──
+  {
+    id: 'times_table_2',
+    name: '二字頭',
+    desc: '掌握2的乘法表',
+    icon: '2️⃣',
+    condition: (stats) => (stats.masteredTables || []).includes(2),
+  },
+  {
+    id: 'times_table_5',
+    name: '五字頭',
+    desc: '掌握5的乘法表',
+    icon: '5️⃣',
+    condition: (stats) => (stats.masteredTables || []).includes(5),
+  },
+  {
+    id: 'times_table_all',
+    name: '乘法表大師',
+    desc: '掌握所有乘法表',
+    icon: '🏆',
+    condition: (stats) => (stats.masteredTables || []).length >= 10,
+  },
+  {
+    id: 'monster_slayer',
+    name: '怪獸剋星',
+    desc: '打怪獸模式完成所有關卡',
+    icon: '👾',
+    condition: (stats) => (stats.monsterLevelsCompleted || 0) >= 3,
+  },
+  {
+    id: 'artist',
+    name: '小畫家',
+    desc: '完成所有填色圖案',
+    icon: '🎨',
+    condition: (stats) => (stats.coloringCompleted || 0) >= 6,
+  },
+  {
+    id: 'daily_7_mult',
+    name: '每日勤練',
+    desc: '連續完成7天每日挑戰',
+    icon: '📅',
+    condition: (stats) => (stats.multiplicationStreak || 0) >= 7,
+  },
+  {
+    id: 'speed_demon',
+    name: '閃電手',
+    desc: '每日挑戰30秒內完成',
+    icon: '⚡',
+    condition: (stats) => (stats.multiplicationBestTime || 999) <= 30,
+  },
 ]
 
 export default achievements
