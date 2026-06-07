@@ -4,6 +4,7 @@ import questions from '../data/questions.js'
 import { useOfflineProgress } from '../hooks/useOfflineProgress.js'
 import { useAdaptiveDifficulty, getQuizComposition } from '../hooks/useAdaptiveDifficulty.js'
 import { useAuth } from '../context/AuthContext.jsx'
+import TriangleDiagram from '../components/TriangleDiagram.jsx'
 
 function pickQuestionsByDifficulty(topic, difficulty) {
   const pool = questions.filter((q) => q.topic === topic)
@@ -26,6 +27,7 @@ const TOPIC_LABELS = {
   measurement: '📏 量度世界',
   shapes: '🔷 圖形迷宮',
   data: '📊 數據偵探',
+  triangles: '🔺 三角形探險家',
 }
 
 export default function QuizPage() {
@@ -207,6 +209,19 @@ export default function QuizPage() {
             {' '}+{getStarReward(question.difficulty)}⭐
           </span>
         </div>
+
+        {/* Triangle diagram */}
+        {question.diagram && (
+          <TriangleDiagram
+            pts={question.diagram.pts}
+            equal={question.diagram.equal}
+            right={question.diagram.right}
+            sideLabels={question.diagram.sideLabels}
+            vertexLabels={question.diagram.vertexLabels}
+            highlight={question.diagram.highlight}
+          />
+        )}
+
         <div className="question-text">{question.question}</div>
 
         <div className="options-grid">

@@ -280,6 +280,13 @@ body {
 .topic-data .topic-name { color: var(--orange); }
 .topic-data { border-top: 4px solid var(--orange); }
 
+/* ── Triangles Topic ──────────────────────────────── */
+
+.topic-triangles .topic-icon { color: #7C3AED; }
+.topic-triangles .topic-name { color: #7C3AED; }
+.topic-triangles { border-top: 4px solid #7C3AED; }
+.topic-triangles:hover { background: linear-gradient(135deg, #f5f3ff, #ede9fe); }
+
 /* ── Challenge Button ──────────────────────────────── */
 
 .challenge-btn {

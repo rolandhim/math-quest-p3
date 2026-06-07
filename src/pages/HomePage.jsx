@@ -32,6 +32,13 @@ const TOPICS = [
     desc: '數據處理',
     className: 'topic-data',
   },
+  {
+    key: 'triangles',
+    icon: '🔺',
+    name: '三角形探險家',
+    desc: '三角形分類與特性',
+    className: 'topic-triangles',
+  },
 ]
 
 export default function HomePage() {

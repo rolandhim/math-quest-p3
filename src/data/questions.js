@@ -1,9 +1,9 @@
 /**
  * P3 Maths Question Bank — 數學冒險王國
- * Auto-generated: 2026-05-25
- * Total: 188 questions
- * Numbers: 53, Measurement: 51, Shapes: 42, Data: 42
- * Easy: 69, Medium: 61, Hard: 58
+ * Auto-generated: 2026-06-08
+ * Total: 210 questions
+ * Numbers: 53, Measurement: 51, Shapes: 42, Data: 42, Triangles: 22
+ * Easy: 77, Medium: 69, Hard: 64
  */
 
 const questions = [
@@ -3960,6 +3960,394 @@ const questions = [
       { prompt: '最高係幾多？', type: 'choice', options: ['30', '28', '29', '26'], answer: '30', feedback: '啱！30最高。' },
       { prompt: '最低係幾多？', type: 'choice', options: ['26', '28', '27', '29'], answer: '26', feedback: '好！26最低。' },
       { prompt: '30−26=？', type: 'choice', options: ['4', '2', '5', '3'], answer: '4', feedback: '相差4°C。' }
+    ]}
+  },
+
+  // ══════════════════════════════════════
+  // 三角形 — 等邊、等腰、直角、不等邊
+  // ══════════════════════════════════════
+
+  // ----- EASY -----
+
+  // t_e1 — 等邊三角形識別
+  { id: 't_e1', topic: 'triangles', difficulty: 'easy',
+    question: '以下圖形係咩三角形？',
+    diagram: { pts: [[100,30],[20,140],[180,140]], equal: [0,1,2], right: -1 },
+    options: ['等邊三角形', '等腰三角形', '直角三角形', '不等邊三角形'],
+    answer: '等邊三角形',
+    hint: '三條邊都有 tick 記號，代表三條邊一樣長。',
+    explanation: '三條邊長度相等嘅三角形叫「等邊三角形」。所有角都係 60°。',
+    explanationSteps: ['第一步：睇下三角形嘅 tick 記號。', '第二步：三條邊都有記號，代表三邊相等。', '第三步：三邊相等就係等邊三角形。'],
+    commonMistake: '有啲小朋友會混淆等邊同等腰。等邊係三邊相等，等腰係兩邊相等。',
+    teacherTip: '記住：等邊 = 三邊一樣；等腰 = 兩邊一樣。',
+    guidedReview: { keywords: ['等邊三角形'], method: '觀察', methodHint: '睇下邊啲邊有 tick 記號。', steps: [
+      { prompt: '呢個三角形有幾多條邊有 tick 記號？', type: 'choice', options: ['3條', '2條', '1條', '0條'], answer: '3條', feedback: '三條邊都有記號！' },
+      { prompt: '三條邊都相等，呢個係咩三角形？', type: 'choice', options: ['等邊三角形', '等腰三角形', '直角三角形', '不等邊三角形'], answer: '等邊三角形', feedback: '答啱！' }
+    ]}
+  },
+
+  // t_e2 — 等腰三角形識別
+  { id: 't_e2', topic: 'triangles', difficulty: 'easy',
+    question: '以下圖形係咩三角形？',
+    diagram: { pts: [[100,20],[30,145],[170,145]], equal: [0,2], right: -1 },
+    options: ['等邊三角形', '等腰三角形', '直角三角形', '不等邊三角形'],
+    answer: '等腰三角形',
+    hint: '有兩條邊有 tick 記號，代表有兩條邊相等。',
+    explanation: '有兩條邊長度相等嘅三角形叫「等腰三角形」。相等嘅邊叫腰，第三條邊叫底。',
+    explanationSteps: ['第一步：睇下三角形嘅 tick 記號。', '第二步：兩條邊有記號，代表呢兩邊相等。', '第三步：有兩邊相等就係等腰三角形。'],
+    commonMistake: '有啲小朋友會以為等腰即係三邊相等。等腰淨係兩邊相等咋。',
+    teacherTip: '等腰 = 腰 = 兩條邊相等，好似一個人嘅腰兩邊對稱咁。',
+    guidedReview: { keywords: ['等腰三角形'], method: '觀察', methodHint: '睇下邊啲邊有 tick 記號。', steps: [
+      { prompt: '呢個三角形有幾多條邊有 tick 記號？', type: 'choice', options: ['2條', '3條', '1條', '0條'], answer: '2條', feedback: '兩條邊有記號！' },
+      { prompt: '兩條邊相等，呢個係咩三角形？', type: 'choice', options: ['等邊三角形', '等腰三角形', '直角三角形', '不等邊三角形'], answer: '等腰三角形', feedback: '答啱！' }
+    ]}
+  },
+
+  // t_e3 — 直角三角形識別
+  { id: 't_e3', topic: 'triangles', difficulty: 'easy',
+    question: '以下圖形係咩三角形？',
+    diagram: { pts: [[35,140],[35,40],[165,140]], equal: [], right: 0 },
+    options: ['等邊三角形', '等腰三角形', '直角三角形', '不等邊三角形'],
+    answer: '直角三角形',
+    hint: '留意個正方形 □ 記號，佢代表直角。',
+    explanation: '有一個角係直角（90°）嘅三角形叫「直角三角形」。直角會用一個正方形 □ 嚟標記。',
+    explanationSteps: ['第一步：搵下有冇正方形 □ 記號。', '第二步：有 □ 就代表嗰個角係直角（90°）。', '第三步：有直角就係直角三角形。'],
+    commonMistake: '有啲小朋友會睇漏個直角符號。記住正方形 □ = 直角。',
+    teacherTip: '見到 □ 就係直角，直角即係 90°。',
+    guidedReview: { keywords: ['直角三角形'], method: '觀察', methodHint: '搵下有冇 □ 符號。', steps: [
+      { prompt: '呢個三角形有冇 □ 符號？', type: 'choice', options: ['有', '冇'], answer: '有', feedback: '有！' },
+      { prompt: '有 □ 符號代表係咩三角形？', type: 'choice', options: ['直角三角形', '等邊三角形', '等腰三角形', '不等邊三角形'], answer: '直角三角形', feedback: '答啱！' }
+    ]}
+  },
+
+  // t_e4 — 不等邊三角形識別
+  { id: 't_e4', topic: 'triangles', difficulty: 'easy',
+    question: '以下圖形係咩三角形？',
+    diagram: { pts: [[30,140],[120,30],[175,140]], equal: [], right: -1 },
+    options: ['等邊三角形', '等腰三角形', '直角三角形', '不等邊三角形'],
+    answer: '不等邊三角形',
+    hint: '冇 tick 記號，代表三條邊長度都唔同。',
+    explanation: '三條邊長度都唔同嘅三角形叫「不等邊三角形」（又稱「任意三角形」）。',
+    explanationSteps: ['第一步：睇下有冇 tick 記號。', '第二步：冇任何 tick 記號，代表冇邊相等。', '第三步：三邊都唔同就係不等邊三角形。'],
+    commonMistake: '有啲小朋友會以為所有三角形都有邊相等。其實有啲三角形係三邊都唔同嘅。',
+    teacherTip: '冇 tick = 冇邊相等 = 不等邊三角形。',
+    guidedReview: { keywords: ['不等邊三角形'], method: '觀察', methodHint: '睇下有冇 tick 記號。', steps: [
+      { prompt: '呢個三角形有 tick 記號嗎？', type: 'choice', options: ['冇', '有'], answer: '冇', feedback: '冇 tick 記號！' },
+      { prompt: '冇 tick 記號，三邊都唔同，係咩三角形？', type: 'choice', options: ['不等邊三角形', '等邊三角形', '等腰三角形', '直角三角形'], answer: '不等邊三角形', feedback: '答啱！' }
+    ]}
+  },
+
+  // t_e5 — 三角形有幾多條邊
+  { id: 't_e5', topic: 'triangles', difficulty: 'easy',
+    question: '呢個三角形有幾多條邊？',
+    diagram: { pts: [[100,30],[30,145],[180,145]], equal: [], right: -1 },
+    options: ['3條', '4條', '6條', '5條'],
+    answer: '3條',
+    hint: '數下個三角形有幾多條直線。',
+    explanation: '三角形係由三條直線圍成嘅圖形，所以有 3 條邊。',
+    explanationSteps: ['第一步：用手指指住一條邊數。', '第二步：順時針數，1、2、3。', '第三步：三角形有 3 條邊。'],
+    commonMistake: '三角⋯形⋯唔係 3 條邊咁簡單？但有小朋友會數到 4！要逐條數清楚。',
+    teacherTip: '因為有三個角（angle），所以叫三⻆形（triangle），有三條邊。',
+    guidedReview: { keywords: ['三角形有幾多條邊'], method: '觀察', methodHint: '用手指逐條邊數。', steps: [
+      { prompt: '三角形有幾隻角？', type: 'choice', options: ['3隻', '4隻', '2隻', '5隻'], answer: '3隻', feedback: '啱！三個角。' },
+      { prompt: '所以三角形有幾多條邊？', type: 'choice', options: ['3條', '4條', '6條', '5條'], answer: '3條', feedback: '答啱！三角形 = 3條邊！' }
+    ]}
+  },
+
+  // t_e6 — 三角形有幾多個角
+  { id: 't_e6', topic: 'triangles', difficulty: 'easy',
+    question: '呢個三角形有幾多個角（角落）？',
+    diagram: { pts: [[100,30],[30,145],[180,145]], equal: [], right: -1 },
+    options: ['3個', '4個', '6個', '2個'],
+    answer: '3個',
+    hint: '逐個角（頂點）數下。',
+    explanation: '三角形有三個角（頂點），所以叫「三⻆形」。',
+    explanationSteps: ['第一步：睇下圖形嘅尖角。', '第二步：數下有 3 個尖角。', '第三步：三角形有三個角。'],
+    commonMistake: '有人會將邊同角混淆。邊係直線，角係兩條邊相交嘅位。',
+    teacherTip: '「三⻆形」個「⻆」字就係解角，所以一定有 3 個角。',
+    guidedReview: { keywords: ['三角形有幾多個角'], method: '觀察', methodHint: '逐個尖角數下。', steps: [
+      { prompt: '數下呢個圖形有幾個尖角？', type: 'choice', options: ['3個', '4個', '2個', '5個'], answer: '3個', feedback: '啱！三個角。' },
+      { prompt: '三角形有 3 個角，所以叫？', type: 'choice', options: ['三角形', '四邊形', '圓形', '方形'], answer: '三角形', feedback: '答啱！' }
+    ]}
+  },
+
+  // t_e7 — 等邊三角形三邊關係
+  { id: 't_e7', topic: 'triangles', difficulty: 'easy',
+    question: '等邊三角形嘅三條邊長度有咩關係？',
+    diagram: { pts: [[100,30],[20,140],[180,140]], equal: [0,1,2], right: -1, sideLabels: ['?', '?', '?'] },
+    options: ['三條邊都一樣長', '只有兩條邊一樣長', '三條邊都唔同長', '冇固定關係'],
+    answer: '三條邊都一樣長',
+    hint: '「等邊」嘅意思係「相等嘅邊」。',
+    explanation: '「等邊」就係話三條邊都相等（一樣長）。等邊三角形嘅三個角都係 60°。',
+    explanationSteps: ['第一步：「等」嘅意思係相等。', '第二步：「等邊」就係三條邊都相等。', '第三步：所以等邊三角形三邊一樣長。'],
+    commonMistake: '有啲小朋友會混淆「等邊」同「等腰」嘅分別。',
+    teacherTip: '等邊 = 全部邊相等；等腰 = 兩條邊相等。',
+    guidedReview: { keywords: ['等邊三角形', '三條邊'], method: '觀察', methodHint: '「等邊」嘅「等」字係解咩？', steps: [
+      { prompt: '「等邊」嘅「等」字係咩意思？', type: 'choice', options: ['相等', '不等', '計數', '畫圖'], answer: '相等', feedback: '「等」= 相等！' },
+      { prompt: '等邊三角形有幾多條邊相等？', type: 'choice', options: ['3條', '2條', '1條', '0條'], answer: '3條', feedback: '等邊三角形三邊都一樣長！' }
+    ]}
+  },
+
+  // t_e8 — 等腰三角形有幾多條邊相等
+  { id: 't_e8', topic: 'triangles', difficulty: 'easy',
+    question: '等腰三角形有幾多條邊係相等嘅？',
+    diagram: { pts: [[100,20],[30,145],[170,145]], equal: [0,2], right: -1 },
+    options: ['2條', '3條', '1條', '0條'],
+    answer: '2條',
+    hint: '「等腰」嘅「腰」即係左右兩邊。',
+    explanation: '「等腰」就係有兩條邊（腰）相等。第三條邊叫「底」。',
+    explanationSteps: ['第一步：「等腰」嘅意思係兩邊相等。', '第二步：呢啲相等嘅邊叫「腰」。', '第三步：所以等腰三角形有 2 條邊相等。'],
+    commonMistake: '有人會以為等腰係三邊相等，其實等腰只係兩邊相等。',
+    teacherTip: '等腰 = 有腰 = 兩邊相等，好似一個人企喺度左右對稱。',
+    guidedReview: { keywords: ['等腰三角形', '相等'], method: '觀察', methodHint: '「等腰」即係有「腰」，腰有兩邊。', steps: [
+      { prompt: '「腰」即係身體嘅邊部分？', type: 'choice', options: ['兩邊', '中間', '頭', '腳'], answer: '兩邊', feedback: '啱！腰喺身體兩邊。' },
+      { prompt: '等腰三角形有幾多條邊相等？', type: 'choice', options: ['2條', '3條', '1條', '0條'], answer: '2條', feedback: '等腰三角形有 2 條邊相等！' }
+    ]}
+  },
+
+  // ----- MEDIUM -----
+
+  // t_m1 — 等邊三角形周界
+  { id: 't_m1', topic: 'triangles', difficulty: 'medium',
+    question: '呢個等邊三角形嘅邊長係 5cm，佢嘅周界（周長）係幾多？',
+    diagram: { pts: [[100,30],[20,140],[180,140]], equal: [0,1,2], right: -1, sideLabels: ['5cm', '5cm', '5cm'] },
+    options: ['15cm', '10cm', '20cm', '25cm'],
+    answer: '15cm',
+    hint: '等邊三角形三邊一樣長，周界 = 5 × 3 = 15。',
+    explanation: '等邊三角形三邊都係 5cm。周界 = 5 + 5 + 5 = 15cm。',
+    explanationSteps: ['第一步：等邊三角形三邊一樣長，都係 5cm。', '第二步：周界 = 三邊加埋 = 5 + 5 + 5。', '第三步：5 + 5 + 5 = 15cm。'],
+    commonMistake: '有啲小朋友會淨係計兩邊或者乘錯數。三邊加埋就係周界。',
+    teacherTip: '周界 = 繞圖形一圈嘅總長度，三邊加埋就得。',
+    guidedReview: { keywords: ['周界', '等邊三角形', '5cm'], method: '計算', methodHint: '等邊三邊一樣，5 × 3 = ?', steps: [
+      { prompt: '等邊三角形三邊係咪一樣長？', type: 'choice', options: ['係', '唔係'], answer: '係', feedback: '啱！一樣長。' },
+      { prompt: '一邊長 5cm，三邊加埋係？', type: 'choice', options: ['15cm', '10cm', '20cm', '25cm'], answer: '15cm', feedback: '5×3=15cm！' }
+    ]}
+  },
+
+  // t_m2 — 等腰三角形 — 邊條邊相等
+  { id: 't_m2', topic: 'triangles', difficulty: 'medium',
+    question: '以下等腰三角形入面，邊兩條邊長度相等？',
+    diagram: { pts: [[100,20],[30,145],[170,145]], equal: [0,2], right: -1, vertexLabels: ['A', 'B', 'C'] },
+    options: ['AB = AC', 'AB = BC', 'AC = BC', '全部都相等'],
+    answer: 'AB = AC',
+    hint: 'tick 記號標示咗相等嘅邊。A 點連接嘅兩條邊有記號。',
+    explanation: 'AB（由A到B）同 AC（由A到C）都有 tick 記號，所以 AB = AC。呢兩條邊叫「腰」。',
+    explanationSteps: ['第一步：睇下有邊啲邊有 tick 記號。', '第二步：AB 同 AC 都有 tick。', '第三步：所以 AB = AC。'],
+    commonMistake: '有啲小朋友會睇錯 tick 記號喺邊條邊。要逐條邊對清楚。',
+    teacherTip: 'tick 記號標示咗相等嘅邊，有相同數量 tick 嘅邊就係相等。',
+    guidedReview: { keywords: ['等腰三角形', 'AB', 'AC'], method: '觀察', methodHint: '睇下邊啲邊有 tick 記號。', steps: [
+      { prompt: 'AB 呢條邊有冇 tick 記號？', type: 'choice', options: ['有', '冇'], answer: '有', feedback: '有 tick！' },
+      { prompt: '邊兩條邊相等？', type: 'choice', options: ['AB=AC', 'AB=BC', 'AC=BC'], answer: 'AB=AC', feedback: '答啱！' }
+    ]}
+  },
+
+  // t_m3 — 直角三角形斜邊概念
+  { id: 't_m3', topic: 'triangles', difficulty: 'medium',
+    question: '以下直角三角形入面，最長嘅邊係邊條？',
+    diagram: { pts: [[35,140],[35,40],[165,140]], equal: [], right: 0, vertexLabels: ['C', 'A', 'B'], highlight: 'hypotenuse' },
+    options: ['AB（斜邊）', 'BC（直角邊）', 'AC（直角邊）', '全部一樣長'],
+    answer: 'AB（斜邊）',
+    hint: '直角三角形最長嘅邊叫「斜邊」，佢對住個直角。',
+    explanation: '直角三角形入面，對住直角嘅邊最長，叫做「斜邊」。喺呢個圖入面就係 AB。',
+    explanationSteps: ['第一步：直角三角形有三條邊。', '第二步：對住直角（□）嗰條邊最長。', '第三步：最長嘅邊叫斜邊，呢度係 AB。'],
+    commonMistake: '有啲小朋友會以為直角邊最長，但其實係斜邊先最長。',
+    teacherTip: '斜邊永遠係最長嘅，而且係對住個直角。紅色 highlight 咗就係斜邊。',
+    guidedReview: { keywords: ['斜邊', '最長', '直角三角形'], method: '觀察', methodHint: '對住直角嗰條邊就係斜邊。', steps: [
+      { prompt: '直角三角形邊個角係直角？', type: 'choice', options: ['角C', '角A', '角B'], answer: '角C', feedback: '啱！角C係直角。' },
+      { prompt: '對住直角嘅邊叫咩？', type: 'choice', options: ['斜邊', '直角邊', '底邊', '腰'], answer: '斜邊', feedback: '答啱！斜邊最長！' }
+    ]}
+  },
+
+  // t_m4 — 直角符號
+  { id: 't_m4', topic: 'triangles', difficulty: 'medium',
+    question: '三角形入面呢個正方形符號 □ 代表咩？',
+    diagram: { pts: [[35,140],[35,40],[165,140]], equal: [], right: 0 },
+    options: ['直角（90°）', '鈍角（大過90°）', '銳角（細過90°）', '平角（180°）'],
+    answer: '直角（90°）',
+    hint: '正方形嘅角落係 90°，代表直角。',
+    explanation: '幾何圖形入面，□ 符號代表直角，即係 90°。直角係一個正方形嘅角落形狀。',
+    explanationSteps: ['第一步：正方形每個角都係 90°。', '第二步：所以 □ 符號代表 90°。', '第三步：90° 嘅角叫直角。'],
+    commonMistake: '有啲小朋友會唔記得 □ 符號嘅意思。見到 □ 就聯想到正方形嘅角 = 90°。',
+    teacherTip: '□ = 直角 = 90°，呢個係國際通用嘅標記法。',
+    guidedReview: { keywords: ['□ 符號', '代表'], method: '記憶', methodHint: '正方形嘅角係幾多度？', steps: [
+      { prompt: '正方形嘅每個角係幾多度？', type: 'choice', options: ['90°', '60°', '180°', '360°'], answer: '90°', feedback: '啱！正方形角係 90°。' },
+      { prompt: '所以 □ 符號代表？', type: 'choice', options: ['直角', '鈍角', '銳角', '平角'], answer: '直角', feedback: '答啱！' }
+    ]}
+  },
+
+  // t_m5 — 3,4,5 直角三角形
+  { id: 't_m5', topic: 'triangles', difficulty: 'medium',
+    question: '一個三角形三邊長度分別係 3cm、4cm 同 5cm，請問係咩三角形？',
+    diagram: { pts: [[35,140],[35,50],[170,140]], equal: [], right: 0, sideLabels: ['4cm', '5cm', '3cm'] },
+    options: ['直角三角形', '等邊三角形', '等腰三角形', '不等邊三角形'],
+    answer: '直角三角形',
+    hint: '3²+4²=9+16=25=5²，符合畢氏定理。不過小三可以用直角符號判斷。',
+    explanation: '3cm、4cm 同 5cm 嘅三角形中，有一條邊嘅平方等於另外兩條邊嘅平方加埋，所以係直角三角形。',
+    explanationSteps: ['第一步：留意 3cm 同 4cm 嘅邊形成一個直角。', '第二步：有直角就係直角三角形。', '第三步：所以 3-4-5 三角形係直角三角形。'],
+    commonMistake: '唔係所有三角形都有直角。3-4-5 係一個特別嘅直角三角形組合。',
+    teacherTip: '3-4-5 係最常見嘅直角三角形組合，三條邊嘅比例係 3:4:5。',
+    guidedReview: { keywords: ['3cm', '4cm', '5cm', '三角形'], method: '計算', methodHint: '試下 3²+4² 係咪等於 5²？', steps: [
+      { prompt: '3×3 + 4×4 等於幾多？', type: 'choice', options: ['25', '7', '12', '15'], answer: '25', feedback: '9+16=25！' },
+      { prompt: '5×5 等於幾多？', type: 'choice', options: ['25', '10', '15', '20'], answer: '25', feedback: '25！' },
+      { prompt: '3²+4²=5²，即係咩三角形？', type: 'choice', options: ['直角三角形', '等邊三角形', '等腰三角形', '不等邊三角形'], answer: '直角三角形', feedback: '答啱！' }
+    ]}
+  },
+
+  // t_m6 — 指出直角三角形嘅直角位置
+  { id: 't_m6', topic: 'triangles', difficulty: 'medium',
+    question: '以下直角三角形入面，邊個角係直角？',
+    diagram: { pts: [[35,140],[35,40],[165,140]], equal: [], right: 0, vertexLabels: ['A', 'B', 'C'] },
+    options: ['角A', '角B', '角C', '冇直角'],
+    answer: '角A',
+    hint: '搵下有 □ 符號嘅角。',
+    explanation: '直角符號 □ 喺角A嘅位置，所以角A係直角（90°）。',
+    explanationSteps: ['第一步：搵 □ 符號喺邊個角。', '第二步：□ 符號喺角A。', '第三步：所以角A係直角。'],
+    commonMistake: '有啲小朋友會睇錯位置，要逐個角搵下 □ 符號喺邊。',
+    teacherTip: '□ 符號永遠放喺直角嗰個角度。',
+    guidedReview: { keywords: ['直角位置'], method: '觀察', methodHint: '搵 □ 符號。', steps: [
+      { prompt: '角A有冇 □ 符號？', type: 'choice', options: ['有', '冇'], answer: '有', feedback: '有！' },
+      { prompt: '邊個角係直角？', type: 'choice', options: ['角A', '角B', '角C'], answer: '角A', feedback: '答啱！角A係直角。' }
+    ]}
+  },
+
+  // t_m7 — 分類等腰三角形
+  { id: 't_m7', topic: 'triangles', difficulty: 'medium',
+    question: '以下三角形，邊個描述係啱嘅？',
+    diagram: { pts: [[100,20],[30,145],[170,145]], equal: [0,2], right: -1 },
+    options: ['佢係等腰三角形，有兩條邊相等', '佢係等邊三角形，三條邊都相等', '佢係直角三角形，有一個直角', '佢係不等邊三角形，冇邊相等'],
+    answer: '佢係等腰三角形，有兩條邊相等',
+    hint: '有兩條邊有 tick 記號，即係有兩條邊相等。',
+    explanation: '呢個三角形有兩條邊有 tick 記號（相等），所以係等腰三角形。',
+    explanationSteps: ['第一步：數 tick 記號嘅數量。', '第二步：兩條邊有 tick = 兩邊相等。', '第三步：兩邊相等 = 等腰三角形。'],
+    commonMistake: '等腰同等邊成日撈亂。記住：等腰 = 2邊相等；等邊 = 3邊相等。',
+    teacherTip: 'tick 記號幫你快速判斷三角形類型。',
+    guidedReview: { keywords: ['等腰', '描述'], method: '觀察', methodHint: '睇下有幾多條 tick 記號。', steps: [
+      { prompt: '有 tick 記號嘅邊有幾多條？', type: 'choice', options: ['2條', '3條', '1條', '0條'], answer: '2條', feedback: '2條！' },
+      { prompt: '所以呢個係咩三角形？', type: 'choice', options: ['等腰三角形', '等邊三角形', '直角三角形', '不等邊三角形'], answer: '等腰三角形', feedback: '答啱！' }
+    ]}
+  },
+
+  // t_m8 — 三角形內角和
+  { id: 't_m8', topic: 'triangles', difficulty: 'medium',
+    question: '所有三角形嘅三個內角加埋總共係幾多度？',
+    diagram: { pts: [[100,30],[30,145],[180,145]], equal: [], right: -1 },
+    options: ['180°', '90°', '360°', '270°'],
+    answer: '180°',
+    hint: '任何三角形嘅三個角加埋都係 180°。',
+    explanation: '任何三角形嘅三個內角和都係 180°。正方形有 4 個角（360°），三角形係正方形嘅一半。',
+    explanationSteps: ['第一步：正方形四個角加埋係 360°。', '第二步：三角形係正方形切一半。', '第三步：360° ÷ 2 = 180°。'],
+    commonMistake: '有啲小朋友以為三角形角嘅總和係 360°（同四邊形混淆）。',
+    teacherTip: '三角形內角和 = 180°；四邊形內角和 = 360°。呢個係固定嘅！',
+    guidedReview: { keywords: ['180°', '內角和'], method: '記憶', methodHint: '任何三角形都係 180°。', steps: [
+      { prompt: '正方形嘅內角和係幾多？', type: 'choice', options: ['360°', '180°', '90°', '720°'], answer: '360°', feedback: '啱！360°。' },
+      { prompt: '三角形比正方形少一半角，所以係？', type: 'choice', options: ['180°', '90°', '360°', '270°'], answer: '180°', feedback: '答啱！三角形內角和 = 180°。' }
+    ]}
+  },
+
+  // ----- HARD -----
+
+  // t_h1 — 等腰直角三角形
+  { id: 't_h1', topic: 'triangles', difficulty: 'hard',
+    question: '一個三角形有兩條邊相等，而且有一個直角。呢個係咩三角形？',
+    diagram: { pts: [[35,140],[35,40],[140,140]], equal: [0,2], right: 0, sideLabels: ['?', '?', '?'] },
+    options: ['等腰直角三角形', '等邊三角形', '直角三角形', '等腰三角形'],
+    answer: '等腰直角三角形',
+    hint: '佢同時有兩個特徵：兩邊相等（等腰）＋ 有直角（直角）。',
+    explanation: '呢個三角形同時係等腰三角形（兩邊相等）同直角三角形（有直角），所以叫「等腰直角三角形」。',
+    explanationSteps: ['第一步：有 tick 記號嘅邊 = 等腰。', '第二步：有 □ 符號 = 直角。', '第三步：同時有兩個特徵 = 等腰直角三角形。'],
+    commonMistake: '有啲小朋友淨係睇到其中一個特徵，而唔記得兩個特徵可以並存。',
+    teacherTip: '一個三角形可以同時屬於多個分類。等腰直角 = 等腰 + 直角。',
+    guidedReview: { keywords: ['等腰', '直角', '同時'], method: '觀察', methodHint: '觀察圖形有幾多個特徵。', steps: [
+      { prompt: '呢個三角形有冇直角？', type: 'choice', options: ['有', '冇'], answer: '有', feedback: '有直角！' },
+      { prompt: '有幾多條邊相等？', type: 'choice', options: ['2條', '3條', '1條', '0條'], answer: '2條', feedback: '兩邊相等！' },
+      { prompt: '呢個三角形叫咩？', type: 'choice', options: ['等腰直角三角形', '等邊三角形', '直角三角形', '等腰三角形'], answer: '等腰直角三角形', feedback: '答啱！' }
+    ]}
+  },
+
+  // t_h2 — 已知兩角求第三角
+  { id: 't_h2', topic: 'triangles', difficulty: 'hard',
+    question: '已知三角形兩個角都係 60°，第三個角係幾多度？',
+    diagram: { pts: [[100,30],[20,140],[180,140]], equal: [0,1,2], right: -1 },
+    options: ['60°', '120°', '90°', '30°'],
+    answer: '60°',
+    hint: '三個角加埋 = 180°，180 − 60 − 60 = 60。',
+    explanation: '三角形內角和係 180°。180 − 60 − 60 = 60。所以第三個角都係 60°！呢個係等邊三角形。',
+    explanationSteps: ['第一步：三角形內角和 = 180°。', '第二步：180 − 60 − 60 = 60。', '第三步：第三個角 = 60°，所以係等邊三角形。'],
+    commonMistake: '有啲小朋友會直接答 120°，以為係 180−60=120。要記得減兩個 60°。',
+    teacherTip: '三個角都係 60° 嘅三角形一定係等邊三角形。60+60+60=180。',
+    guidedReview: { keywords: ['60°', '第三角'], method: '計算', methodHint: '三角形內角和係 180°。', steps: [
+      { prompt: '三角形內角和係幾多？', type: 'choice', options: ['180°', '360°', '90°', '200°'], answer: '180°', feedback: '180°！' },
+      { prompt: '180 − 60 − 60 = ？', type: 'choice', options: ['60', '120', '90', '30'], answer: '60', feedback: '答啱！第三角都係 60°。' }
+    ]}
+  },
+
+  // t_h3 — 斜邊名稱
+  { id: 't_h3', topic: 'triangles', difficulty: 'hard',
+    question: '直角三角形入面，最長嘅邊叫咩名？',
+    diagram: { pts: [[35,140],[35,40],[165,140]], equal: [], right: 0, vertexLabels: ['A', 'B', 'C'], highlight: 'hypotenuse' },
+    options: ['斜邊', '直角邊', '腰', '底'],
+    answer: '斜邊',
+    hint: '斜邊係對住直角嗰條邊，亦係最長嘅。',
+    explanation: '直角三角形最長嘅邊叫「斜邊」（hypotenuse）。佢永遠對住個直角，亦係三條邊入面最長嘅。',
+    explanationSteps: ['第一步：直角三角形最長嘅邊有專有名稱。', '第二步：呢條邊叫「斜邊」。', '第三步：斜邊對住個直角。'],
+    commonMistake: '有啲小朋友會叫佢做「底邊」或者「腰」，但正確嘅名係「斜邊」。',
+    teacherTip: '斜邊（hypotenuse）係直角三角形專用嘅名，對住直角，係最長嘅邊。',
+    guidedReview: { keywords: ['最長', '邊', '名'], method: '記憶', methodHint: '斜邊係直角三角形最長嘅邊嘅名。', steps: [
+      { prompt: '直角三角形最長嘅邊叫咩？', type: 'choice', options: ['斜邊', '直角邊', '腰', '底'], answer: '斜邊', feedback: '啱！斜邊！' },
+      { prompt: '斜邊對住邊個角？', type: 'choice', options: ['直角', '銳角', '鈍角', '平角'], answer: '直角', feedback: '答啱！斜邊對住直角。' }
+    ]}
+  },
+
+  // t_h4 — 三角不等式概念
+  { id: 't_h4', topic: 'triangles', difficulty: 'hard',
+    question: '以下邊組長度可以組成一個三角形？\n提示：兩條邊加埋要大過第三條邊。',
+    diagram: { pts: [[35,140],[35,50],[170,140]], equal: [], right: 0, sideLabels: ['3cm', '5cm', '4cm'] },
+    options: ['3cm, 4cm, 5cm', '1cm, 2cm, 4cm', '2cm, 2cm, 5cm', '1cm, 1cm, 3cm'],
+    answer: '3cm, 4cm, 5cm',
+    hint: '試每組：最短兩條邊加埋 > 最長嗰條？3+4>5✓，1+2<4✗。',
+    explanation: '3+4=7>5，符合三角不等式，所以 3cm、4cm、5cm 可以組成三角形（直角三角形）。',
+    explanationSteps: ['第一步：三角不等式：最短兩邊加埋 > 最長邊。', '第二步：3+4=7>5✓。', '第三步：所以 3,4,5 可以。'],
+    commonMistake: '有啲小朋友會淨係睇長度而唔用加法檢查。一定要逐組驗證。',
+    teacherTip: '三角不等式：最短兩條邊加埋一定要大過最長嗰條邊。',
+    guidedReview: { keywords: ['三角不等式'], method: '計算', methodHint: '最短兩條邊加埋 > 最長邊？', steps: [
+      { prompt: '第一組最短兩邊：3+4=？', type: 'choice', options: ['7', '5', '12', '1'], answer: '7', feedback: '7>5，可以！' },
+      { prompt: '第二組最短兩邊：1+2=？', type: 'choice', options: ['3', '4', '2', '5'], answer: '3', feedback: '3<4，唔可以。' },
+      { prompt: '邊組可以組成三角形？', type: 'choice', options: ['3,4,5', '1,2,4', '2,2,5', '1,1,3'], answer: '3,4,5', feedback: '答啱！' }
+    ]}
+  },
+
+  // t_h5 — 不等邊三角形
+  { id: 't_h5', topic: 'triangles', difficulty: 'hard',
+    question: '以下三角形三邊分別係 4cm、6cm 同 8cm，三條邊長度都唔同，呢個係咩三角形？',
+    diagram: { pts: [[40,140],[100,30],[180,140]], equal: [], right: -1, sideLabels: ['8cm', '6cm', '4cm'] },
+    options: ['不等邊三角形', '等腰三角形', '等邊三角形', '直角三角形'],
+    answer: '不等邊三角形',
+    hint: '三條邊都唔同長度，冇任何 tick 記號，就係不等邊三角形。',
+    explanation: '三條邊 4cm、6cm、8cm 全部都唔同，冇邊相等，所以係不等邊三角形。',
+    explanationSteps: ['第一步：睇下三邊長度有冇相同。', '第二步：4、6、8 全部唔同。', '第三步：冇邊相等 = 不等邊三角形。'],
+    commonMistake: '有啲小朋友會一見到三角形就諗係等腰或等邊。其實有啲三角形係三邊都唔同嘅。',
+    teacherTip: '不等邊三角形即係所有邊都唔一樣，係最常見嘅三角形類型。',
+    guidedReview: { keywords: ['4cm', '6cm', '8cm'], method: '觀察', methodHint: '三邊長度有冇相同？', steps: [
+      { prompt: '4、6、8 呢三個數有冇相同？', type: 'choice', options: ['冇', '有'], answer: '冇', feedback: '全部唔同！' },
+      { prompt: '三邊都唔同叫咩三角形？', type: 'choice', options: ['不等邊三角形', '等腰三角形', '等邊三角形', '直角三角形'], answer: '不等邊三角形', feedback: '答啱！' }
+    ]}
+  },
+
+  // t_h6 — 三角形特性綜合題
+  { id: 't_h6', topic: 'triangles', difficulty: 'hard',
+    question: '以下邊句關於三角形嘅陳述係正確嘅？',
+    diagram: { pts: [[100,30],[30,145],[180,145]], equal: [], right: -1 },
+    options: ['三角形一定有 3 條邊同 3 個角', '三角形可以有 4 條邊', '等邊三角形只有兩條邊相等', '直角三角形冇斜邊'],
+    answer: '三角形一定有 3 條邊同 3 個角',
+    hint: '諗下三角形嘅基本定義。',
+    explanation: '三角形嘅定義就係由 3 條邊同 3 個角組成嘅平面圖形。其他選項都係錯嘅。',
+    explanationSteps: ['第一步：三角形最基本嘅特徵係 3 條邊。', '第二步：同埋 3 個角。', '第三步：所以「三角形一定有 3 條邊同 3 個角」係啱嘅。'],
+    commonMistake: '等邊三角形係三邊相等，唔係兩邊。直角三角形一定有斜邊。',
+    teacherTip: '三角形基本定義：三邊、三角、封閉圖形。呢個係永遠不變嘅。',
+    guidedReview: { keywords: ['陳述', '正確', '三角形'], method: '理解', methodHint: '逐個選項諗下係咪啱。', steps: [
+      { prompt: '三角形有幾多條邊？', type: 'choice', options: ['3', '4', '2', '5'], answer: '3', feedback: '3條邊。' },
+      { prompt: '三角形有幾多個角？', type: 'choice', options: ['3', '4', '2', '6'], answer: '3', feedback: '3個角。' },
+      { prompt: '所以邊句係啱嘅？', type: 'choice', options: ['一定有3條邊3個角', '可以有4條邊', '等邊有兩條邊相等', '直角三角形冇斜邊'], answer: '一定有3條邊3個角', feedback: '答啱！' }
     ]}
   },
 ]
