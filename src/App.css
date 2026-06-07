@@ -287,6 +287,13 @@ body {
 .topic-triangles { border-top: 4px solid #7C3AED; }
 .topic-triangles:hover { background: linear-gradient(135deg, #f5f3ff, #ede9fe); }
 
+/* ── Word Problems Topic ──────────────────────────── */
+
+.topic-word-problems .topic-icon { color: #059669; }
+.topic-word-problems .topic-name { color: #059669; }
+.topic-word-problems { border-top: 4px solid #059669; }
+.topic-word-problems:hover { background: linear-gradient(135deg, #ecfdf5, #d1fae5); }
+
 /* ── Challenge Button ──────────────────────────────── */
 
 .challenge-btn {

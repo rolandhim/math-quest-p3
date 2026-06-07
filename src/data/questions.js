@@ -4392,6 +4392,277 @@ const questions = [
       { prompt: '所以邊句係啱嘅？', type: 'choice', options: ['一定有3條邊3個角', '可以有4條邊', '等邊有兩條邊相等', '直角三角形冇斜邊'], answer: '一定有3條邊3個角', feedback: '答啱！' }
     ]}
   },
+
+  // ══════════════════════════════════════
+  // 📝 文字題挑戰 — 多步運算應用題
+  // ══════════════════════════════════════
+
+  // ----- EASY -----
+
+  // wp_e1 — 加減混合：農場動物
+  { id: 'wp_e1', topic: 'word-problems', difficulty: 'easy',
+    question: '農場有雞 3429 隻，鴨比雞少 917 隻。農場共有雞和鴨多少隻？',
+    options: ['5941 隻', '2512 隻', '4346 隻', '6846 隻'],
+    answer: '5941 隻',
+    hint: '先計鴨有幾多隻，再加埋雞嘅數量。',
+    explanation: '鴨的數量 = 3429 − 917 = 2512 隻。總數 = 3429 + 2512 = 5941 隻。',
+    explanationSteps: ['第一步：鴨比雞少 917 隻 → 3429 − 917 = 2512。', '第二步：總數 = 雞 + 鴨 = 3429 + 2512。', '第三步：3429 + 2512 = 5941。'],
+    commonMistake: '有啲小朋友會直接將兩個數加埋，忽略咗「比…少」呢個關係。',
+    teacherTip: '「比…少」= 用減法；「共有」= 用加法。',
+    guidedReview: { keywords: ['3429', '少 917', '共有'], method: '混合運算', methodHint: '先計較少嘅數量，再加埋。', steps: [
+      { prompt: '鴨比雞少 917 隻，鴨有幾多？', type: 'choice', options: ['2512 隻', '4346 隻', '3429 隻'], answer: '2512 隻', feedback: '3429−917=2512。' },
+      { prompt: '雞 3429 + 鴨 2512 = ？', type: 'choice', options: ['5941', '4346', '6846'], answer: '5941', feedback: '答啱！共有 5941 隻。' }
+    ]}
+  },
+
+  // wp_e2 — 金錢應用：買書找續
+  { id: 'wp_e2', topic: 'word-problems', difficulty: 'easy',
+    question: '小明有 236 元，媽媽再給他 185 元。他買了一本 398 元的書，還剩多少元？',
+    options: ['23 元', '121 元', '421 元', '51 元'],
+    answer: '23 元',
+    hint: '先計總共有幾多錢，再減去書嘅價錢。',
+    explanation: '總共有的錢 = 236 + 185 = 421 元。剩餘 = 421 − 398 = 23 元。',
+    explanationSteps: ['第一步：小明原有 236 元 + 媽媽給 185 元 = 421 元。', '第二步：421 元 − 書本 398 元 = 23 元。'],
+    commonMistake: '有啲小朋友會直接用 236 − 398，但呢個唔夠減，要先加媽媽俾嘅錢。',
+    teacherTip: '「再給」= 先加；「買了」= 再減。',
+    guidedReview: { keywords: ['236', '185', '398'], method: '加減混合', methodHint: '兩次運算：先加後減。', steps: [
+      { prompt: '236 + 185 = ？', type: 'choice', options: ['421', '311', '521'], answer: '421', feedback: '共有 421 元。' },
+      { prompt: '421 − 398 = ？', type: 'choice', options: ['23', '123', '33'], answer: '23', feedback: '答啱！還剩 23 元。' }
+    ]}
+  },
+
+  // wp_e3 — 乘減混合：鉛筆問題
+  { id: 'wp_e3', topic: 'word-problems', difficulty: 'easy',
+    question: '每盒鉛筆有 12 支。老師買了 5 盒，分給 8 個學生每人 6 支。還剩多少支鉛筆？',
+    options: ['12 支', '60 支', '48 支', '0 支'],
+    answer: '12 支',
+    hint: '先計總共有幾多支鉛筆，再計分咗幾多支出去。',
+    explanation: '總鉛筆 = 12 × 5 = 60 支。分出的鉛筆 = 8 × 6 = 48 支。剩餘 = 60 − 48 = 12 支。',
+    explanationSteps: ['第一步：總鉛筆數 = 12 × 5 = 60 支。', '第二步：分給學生的鉛筆 = 8 × 6 = 48 支。', '第三步：60 − 48 = 12 支。'],
+    commonMistake: '有啲小朋友會將 12 × 5 × 8 × 6 全部乘埋一齊，但應該分開計乘法再減。',
+    teacherTip: '「共有」用乘法；「分給」用乘法；「還剩」用減法。',
+    guidedReview: { keywords: ['每盒 12 支', '5 盒', '8 個學生', '每人 6 支'], method: '乘減混合', methodHint: '先乘出總數，再乘出分走的，最後減。', steps: [
+      { prompt: '12 × 5 = ？支鉛筆', type: 'choice', options: ['60', '72', '48'], answer: '60', feedback: '60 支。' },
+      { prompt: '8 × 6 = ？支（分走了）', type: 'choice', options: ['48', '14', '56'], answer: '48', feedback: '48 支。' },
+      { prompt: '60 − 48 = ？', type: 'choice', options: ['12', '22', '2'], answer: '12', feedback: '答啱！剩 12 支。' }
+    ]}
+  },
+
+  // wp_e4 — 金錢應用：焗爐優惠
+  { id: 'wp_e4', topic: 'word-problems', difficulty: 'easy',
+    question: '陳小姐以會員價購買一個焗爐。原價 998 元，會員價比原價便宜了 635 元。她付一張 1000 元紙幣，應找回多少元？',
+    options: ['637 元', '363 元', '635 元', '2 元'],
+    answer: '637 元',
+    hint: '先計會員價係幾多，再用 1000 減去會員價。',
+    explanation: '會員價 = 998 − 635 = 363 元。找回 = 1000 − 363 = 637 元。',
+    explanationSteps: ['第一步：便宜了 = 用減法。998 − 635 = 363 元（會員價）。', '第二步：付了 1000 元，找回 = 1000 − 363 = 637 元。'],
+    commonMistake: '有啲小朋友會用 1000 − 635，但咁係錯嘅。要先計會員價再找續。',
+    teacherTip: '「便宜了」= 減法；「找回」= 再用減法。兩步都係減。',
+    guidedReview: { keywords: ['998', '便宜 635', '1000', '找回'], method: '兩步減法', methodHint: '先減出會員價，再減出找續。', steps: [
+      { prompt: '998 − 635 = ？元（會員價）', type: 'choice', options: ['363', '635', '263'], answer: '363', feedback: '會員價 363 元。' },
+      { prompt: '1000 − 363 = ？元（找回）', type: 'choice', options: ['637', '737', '647'], answer: '637', feedback: '答啱！找回 637 元。' }
+    ]}
+  },
+
+  // wp_e5 — 比較題：圖書館
+  { id: 'wp_e5', topic: 'word-problems', difficulty: 'easy',
+    question: '圖書館有故事書 2480 本，科普書比故事書多 365 本。圖書館共有書多少本？',
+    options: ['5325 本', '2115 本', '2845 本', '4960 本'],
+    answer: '5325 本',
+    hint: '先計科普書有幾多本，再加埋故事書。',
+    explanation: '科普書 = 2480 + 365 = 2845 本。總數 = 2480 + 2845 = 5325 本。',
+    explanationSteps: ['第一步：科普書比故事書多 365 本 → 2480 + 365 = 2845。', '第二步：總數 = 2480 + 2845 = 5325。'],
+    commonMistake: '有啲小朋友會以為「比…多」係用減法，其實係加法。',
+    teacherTip: '「比…多」= 加法；「共有」= 再加一次。',
+    guidedReview: { keywords: ['2480', '多 365', '共有'], method: '加加混合', methodHint: '兩次加法。', steps: [
+      { prompt: '2480 + 365 = ？', type: 'choice', options: ['2845', '2115', '2745'], answer: '2845', feedback: '科普書 2845 本。' },
+      { prompt: '2480 + 2845 = ？', type: 'choice', options: ['5325', '5225', '5425'], answer: '5325', feedback: '答啱！5325 本。' }
+    ]}
+  },
+
+  // wp_e6 — 表格題：入場人數
+  { id: 'wp_e6', topic: 'word-problems', difficulty: 'easy',
+    question: '下表顯示三天的入場人數：\n星期二 4095 人\n星期三 3179 人\n星期四 2428 人\n\n星期四比星期三少多少人？',
+    options: ['751 人', '1667 人', '649 人', '3501 人'],
+    answer: '751 人',
+    hint: '用星期三嘅人數減去星期四嘅人數。',
+    explanation: '星期四比星期三少 = 3179 − 2428 = 751 人。',
+    explanationSteps: ['第一步：找出星期三和星期四的人數。', '第二步：3179 − 2428 = 751。'],
+    commonMistake: '有啲小朋友會用星期四減星期三（細減大），但「比…少」應該係大減細。',
+    teacherTip: '「比…少」= 大數減細數。',
+    guidedReview: { keywords: ['4095', '3179', '2428', '少'], method: '減法', methodHint: '星期三減星期四。', steps: [
+      { prompt: '邊日人數多啲？', type: 'choice', options: ['星期三', '星期四', '星期二'], answer: '星期三', feedback: '3179 > 2428。' },
+      { prompt: '3179 − 2428 = ？', type: 'choice', options: ['751', '649', '851'], answer: '751', feedback: '答啱！少 751 人。' }
+    ]}
+  },
+
+  // ----- MEDIUM -----
+
+  // wp_m1 — 三步運算：超級市場水果
+  { id: 'wp_m1', topic: 'word-problems', difficulty: 'medium',
+    question: '超級市場有蘋果 350 個，橙比蘋果多 128 個，梨比橙少 95 個。梨有多少個？',
+    options: ['383 個', '478 個', '573 個', '255 個'],
+    answer: '383 個',
+    hint: '先計橙有幾多，再從橙嘅數量減去 95 就係梨。',
+    explanation: '橙 = 350 + 128 = 478 個。梨 = 478 − 95 = 383 個。',
+    explanationSteps: ['第一步：橙比蘋果多 128 → 350 + 128 = 478。', '第二步：梨比橙少 95 → 478 − 95 = 383。'],
+    commonMistake: '有啲小朋友會跳步，直接用 350 − 95，但咁忽略咗橙嘅數量。',
+    teacherTip: '呢類題目要一步一步跟住關係做，唔好跳步。',
+    guidedReview: { keywords: ['350', '多 128', '少 95'], method: '三步運算', methodHint: '蘋果→橙→梨，逐層計。', steps: [
+      { prompt: '橙有多少個？350 + 128 = ？', type: 'choice', options: ['478', '222', '578'], answer: '478', feedback: '橙 478 個。' },
+      { prompt: '梨有多少個？478 − 95 = ？', type: 'choice', options: ['383', '573', '473'], answer: '383', feedback: '答啱！梨 383 個。' }
+    ]}
+  },
+
+  // wp_m2 — 乘加混合：買曲奇
+  { id: 'wp_m2', topic: 'word-problems', difficulty: 'medium',
+    question: '媽媽買了 4 盒曲奇，每盒 28 元，又買了一盒朱古力 45 元。她付 200 元，應找回多少元？',
+    options: ['43 元', '157 元', '112 元', '88 元'],
+    answer: '43 元',
+    hint: '先計曲奇總價，再加朱古力，最後用 200 減。',
+    explanation: '曲奇總價 = 28 × 4 = 112 元。總消費 = 112 + 45 = 157 元。找回 = 200 − 157 = 43 元。',
+    explanationSteps: ['第一步：4 盒曲奇 = 28 × 4 = 112 元。', '第二步：總消費 = 112 + 45 = 157 元。', '第三步：200 − 157 = 43 元。'],
+    commonMistake: '有啲小朋友會將 200 − 28 × 4 − 45 一次過計，但容易計錯次序。',
+    teacherTip: '購物題三步走：1. 乘出總價 2. 加埋 3. 找續。',
+    guidedReview: { keywords: ['4 盒', '28 元', '45 元', '200 元'], method: '乘加減混合', methodHint: '28×4 → +45 → 200−。', steps: [
+      { prompt: '28 × 4 = ？', type: 'choice', options: ['112', '82', '122'], answer: '112', feedback: '曲奇 112 元。' },
+      { prompt: '112 + 45 = ？', type: 'choice', options: ['157', '147', '167'], answer: '157', feedback: '總消費 157 元。' },
+      { prompt: '200 − 157 = ？', type: 'choice', options: ['43', '57', '143'], answer: '43', feedback: '答啱！找回 43 元。' }
+    ]}
+  },
+
+  // wp_m3 — 表格多步：音樂會門票
+  { id: 'wp_m3', topic: 'word-problems', difficulty: 'medium',
+    question: '下表顯示音樂會的門票銷售情況：\n星期二：4095 張（其中 194 張是貴賓票）\n星期三：3179 張\n星期四：2428 張\n\n(a) 星期四比星期三少售出多少張？\n(b) 星期二售出的普通門票有多少張？',
+    options: ['(a)751張 (b)3901張', '(a)649張 (b)194張', '(a)751張 (b)194張', '(a)649張 (b)3901張'],
+    answer: '(a)751張 (b)3901張',
+    hint: '(a) 星期三減星期四；(b) 星期二總數減貴賓票。',
+    explanation: '(a) 星期三 − 星期四 = 3179 − 2428 = 751 張。(b) 普通票 = 全部 − 貴賓 = 4095 − 194 = 3901 張。',
+    explanationSteps: ['第一步(a)：3179 − 2428 = 751。', '第二步(b)：4095 − 194 = 3901。'],
+    commonMistake: '有啲小朋友會將 2428 − 3179（細減大），要記住「比…少」係大減細。',
+    teacherTip: '(a) 比較題用減法；(b) 分類題用減法。',
+    guidedReview: { keywords: ['4095', '194', '3179', '2428'], method: '表格分析', methodHint: '分開 (a) 同 (b) 獨立計。', steps: [
+      { prompt: '(a) 3179 − 2428 = ？', type: 'choice', options: ['751', '649', '851'], answer: '751', feedback: '751 張。' },
+      { prompt: '(b) 4095 − 194 = ？', type: 'choice', options: ['3901', '3891', '4901'], answer: '3901', feedback: '答啱！' }
+    ]}
+  },
+
+  // wp_m4 — 除加混合：分糖果
+  { id: 'wp_m4', topic: 'word-problems', difficulty: 'medium',
+    question: '把 96 粒糖平均分給 8 個小朋友，每人得糖多少粒？如果其中 2 個小朋友不要糖，把他們的糖再平均分給其餘 6 人，每人共得多少粒？',
+    options: ['16 粒', '12 粒', '4 粒', '24 粒'],
+    answer: '16 粒',
+    hint: '先計每人第一次分到幾多，再計退回嘅糖分俾其餘人。',
+    explanation: '第一次：96 ÷ 8 = 12 粒/人。2 人退回 = 12 × 2 = 24 粒。再分給 6 人：24 ÷ 6 = 4 粒/人。每人共得 = 12 + 4 = 16 粒。',
+    explanationSteps: ['第一步：96 ÷ 8 = 12 粒（每人第一次）。', '第二步：退回 12 × 2 = 24 粒。', '第三步：24 ÷ 6 = 4 粒（每人第二次）。', '第四步：12 + 4 = 16 粒。'],
+    commonMistake: '有啲小朋友會直接用 96 ÷ 6 = 16，但咁忽略咗原本每人已分到 12 粒呢步。',
+    teacherTip: '呢題分兩次運算：先除（平均分），再計退回，再除，最後加。',
+    guidedReview: { keywords: ['96 粒', '8 人', '2 人不要', '6 人'], method: '除加混合', methodHint: '逐步計：除→乘→除→加。', steps: [
+      { prompt: '96 ÷ 8 = ？', type: 'choice', options: ['12', '8', '16'], answer: '12', feedback: '每人先得 12 粒。' },
+      { prompt: '退回幾多粒？12 × 2 = ？', type: 'choice', options: ['24', '14', '6'], answer: '24', feedback: '退回 24 粒。' },
+      { prompt: '24 ÷ 6 = ？再分', type: 'choice', options: ['4', '6', '8'], answer: '4', feedback: '每人多加 4 粒 → 共 16 粒。' }
+    ]}
+  },
+
+  // wp_m5 — 倍數問題：男女教師
+  { id: 'wp_m5', topic: 'word-problems', difficulty: 'medium',
+    question: '學校有男教師 28 人，女教師人數是男教師的 3 倍。學校共有教師多少人？',
+    options: ['112 人', '84 人', '31 人', '56 人'],
+    answer: '112 人',
+    hint: '先計女教師有幾多人（乘法），再加男教師。',
+    explanation: '女教師 = 28 × 3 = 84 人。總教師 = 28 + 84 = 112 人。',
+    explanationSteps: ['第一步：女教師是男教師的 3 倍 → 28 × 3 = 84。', '第二步：總數 = 28 + 84 = 112。'],
+    commonMistake: '有啲小朋友會答 84 就當做完，漏咗加返男教師。',
+    teacherTip: '「倍」= 乘法；「共有」= 加返原本嘅數。',
+    guidedReview: { keywords: ['28 人', '3 倍', '共有'], method: '乘加混合', methodHint: '先乘出女教師，再加男教師。', steps: [
+      { prompt: '28 × 3 = ？', type: 'choice', options: ['84', '31', '56'], answer: '84', feedback: '女教師 84 人。' },
+      { prompt: '28 + 84 = ？', type: 'choice', options: ['112', '102', '122'], answer: '112', feedback: '答啱！112 人。' }
+    ]}
+  },
+
+  // wp_m6 — 金錢：手機優惠
+  { id: 'wp_m6', topic: 'word-problems', difficulty: 'medium',
+    question: '爸爸買了一部手機，原價 3680 元，優惠減了 495 元。他付了 4000 元，應找回多少元？',
+    options: ['815 元', '320 元', '495 元', '1315 元'],
+    answer: '815 元',
+    hint: '先計實際要付幾多錢，再用 4000 減。',
+    explanation: '實付 = 3680 − 495 = 3185 元。找回 = 4000 − 3185 = 815 元。',
+    explanationSteps: ['第一步：優惠後價錢 = 3680 − 495 = 3185 元。', '第二步：4000 − 3185 = 815 元。'],
+    commonMistake: '有啲小朋友會用 4000 − 3680 = 320，但咁忽略咗優惠折扣。',
+    teacherTip: '先計「實付」（原價減優惠），再計「找續」（付款減實付）。',
+    guidedReview: { keywords: ['3680', '495', '4000', '找回'], method: '兩步減法', methodHint: '3680−495 → 4000−結果。', steps: [
+      { prompt: '3680 − 495 = ？', type: 'choice', options: ['3185', '3285', '3195'], answer: '3185', feedback: '實付 3185 元。' },
+      { prompt: '4000 − 3185 = ？', type: 'choice', options: ['815', '915', '715'], answer: '815', feedback: '答啱！找回 815 元。' }
+    ]}
+  },
+
+  // ----- HARD -----
+
+  // wp_h1 — 三步混合：文具包裝
+  { id: 'wp_h1', topic: 'word-problems', difficulty: 'hard',
+    question: '文具店有鉛筆 648 支，原子筆比鉛筆少 159 支。把所有筆每 9 支包裝成一盒，共可包裝多少盒？還剩多少支？',
+    options: ['126 盒，剩 3 支', '113 盒，剩 6 支', '126 盒，剩 0 支', '113 盒，剩 3 支'],
+    answer: '126 盒，剩 3 支',
+    hint: '先計原子筆數量，再加總，最後除以 9 求盒數同餘數。',
+    explanation: '原子筆 = 648 − 159 = 489 支。總筆數 = 648 + 489 = 1137 支。包裝：1137 ÷ 9 = 126 盒...餘 3 支。',
+    explanationSteps: ['第一步：原子筆 = 648 − 159 = 489。', '第二步：總筆數 = 648 + 489 = 1137。', '第三步：1137 ÷ 9 = 126...3。'],
+    commonMistake: '有啲小朋友會忘記計餘數，或者將原子筆同鉛筆嘅數撈亂。',
+    teacherTip: '包裝題 = 先加總，再做除法。餘數 = 裝唔晒嗰啲。',
+    guidedReview: { keywords: ['648', '少 159', '每 9 支', '盒'], method: '加除混合', methodHint: '648−159→加總→÷9。', steps: [
+      { prompt: '648 − 159 = ？', type: 'choice', options: ['489', '599', '389'], answer: '489', feedback: '原子筆 489 支。' },
+      { prompt: '648 + 489 = ？總筆數', type: 'choice', options: ['1137', '1237', '1037'], answer: '1137', feedback: '共 1137 支。' },
+      { prompt: '1137 ÷ 9 = ？', type: 'choice', options: ['126...3', '126', '127'], answer: '126...3', feedback: '答啱！126 盒，剩 3 支。' }
+    ]}
+  },
+
+  // wp_h2 — 表格綜合：月餅銷量
+  { id: 'wp_h2', topic: 'word-problems', difficulty: 'hard',
+    question: '下表顯示四間月餅店的銷量：\nA 店：2150 個\nB 店：比 A 店多 387 個\nC 店：1865 個\nD 店：比 C 店少 298 個\n\n四間店共售出月餅多少個？',
+    options: ['8119 個', '7534 個', '8400 個', '7911 個'],
+    answer: '8119 個',
+    hint: '先分別計出 B 店同 D 店嘅銷量，再加四間。',
+    explanation: 'B = 2150 + 387 = 2537 個。D = 1865 − 298 = 1567 個。總 = 2150 + 2537 + 1865 + 1567 = 8119 個。',
+    explanationSteps: ['第一步：B 店 = 2150 + 387 = 2537。', '第二步：D 店 = 1865 − 298 = 1567。', '第三步：2150 + 2537 + 1865 + 1567 = 8119。'],
+    commonMistake: '有啲小朋友會漏計其中一間，或者將 B 同 D 嘅計算調轉。',
+    teacherTip: '呢類題要逐間店計清楚，最後先加總。建議用草稿紙逐個寫。',
+    guidedReview: { keywords: ['2150', '387', '1865', '298'], method: '四步運算', methodHint: '計 B→計 D→加四間。', steps: [
+      { prompt: 'B 店：2150 + 387 = ？', type: 'choice', options: ['2537', '1763', '2437'], answer: '2537', feedback: 'B 店 2537 個。' },
+      { prompt: 'D 店：1865 − 298 = ？', type: 'choice', options: ['1567', '1667', '2163'], answer: '1567', feedback: 'D 店 1567 個。' },
+      { prompt: '總數 = 2150 + 2537 + 1865 + 1567 = ？', type: 'choice', options: ['8119', '8219', '8019'], answer: '8119', feedback: '答啱！8119 個。' }
+    ]}
+  },
+
+  // wp_h3 — 乘減應用：儲蓄買模型
+  { id: 'wp_h3', topic: 'word-problems', difficulty: 'hard',
+    question: '小明每星期儲蓄 35 元。他儲蓄了 8 星期後，用去 168 元買模型，還剩多少元？',
+    options: ['112 元', '280 元', '168 元', '92 元'],
+    answer: '112 元',
+    hint: '先計總共儲咗幾多，再減去模型價錢。',
+    explanation: '總儲蓄 = 35 × 8 = 280 元。剩餘 = 280 − 168 = 112 元。',
+    explanationSteps: ['第一步：8 星期儲蓄 = 35 × 8 = 280 元。', '第二步：280 − 168 = 112 元。'],
+    commonMistake: '有啲小朋友會先減後乘，次序錯咗就答案唔同。',
+    teacherTip: '儲蓄題 = 先乘出總數，再減支出。',
+    guidedReview: { keywords: ['每星期 35', '8 星期', '168 元'], method: '乘減混合', methodHint: '先乘後減。', steps: [
+      { prompt: '35 × 8 = ？', type: 'choice', options: ['280', '240', '320'], answer: '280', feedback: '儲了 280 元。' },
+      { prompt: '280 − 168 = ？', type: 'choice', options: ['112', '122', '102'], answer: '112', feedback: '答啱！剩 112 元。' }
+    ]}
+  },
+
+  // wp_h4 — 比較題：絲帶長度差
+  { id: 'wp_h4', topic: 'word-problems', difficulty: 'hard',
+    question: '把一條長 500 厘米的絲帶剪成兩段，短的一段長 185 厘米。長的一段比短的一段長多少厘米？',
+    options: ['130 厘米', '315 厘米', '185 厘米', '500 厘米'],
+    answer: '130 厘米',
+    hint: '先計長嗰段有幾長（總長減短段），再計長短相差。',
+    explanation: '長段 = 500 − 185 = 315 厘米。相差 = 315 − 185 = 130 厘米。',
+    explanationSteps: ['第一步：長段 = 500 − 185 = 315 厘米。', '第二步：相差 = 315 − 185 = 130 厘米。'],
+    commonMistake: '有啲小朋友會答 315（淨係計咗長段），但題目問嘅係「長幾多」，即係相差。',
+    teacherTip: '「長多少」= 長段減短段，即係求相差。',
+    guidedReview: { keywords: ['500 厘米', '185 厘米', '長多少'], method: '兩步減法', methodHint: '減出長段 → 再減出差額。', steps: [
+      { prompt: '500 − 185 = ？長段', type: 'choice', options: ['315', '415', '325'], answer: '315', feedback: '長段 315 厘米。' },
+      { prompt: '315 − 185 = ？相差', type: 'choice', options: ['130', '230', '120'], answer: '130', feedback: '答啱！相差 130 厘米。' }
+    ]}
+  },
 ]
 
 export default questions

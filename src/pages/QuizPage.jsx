@@ -28,6 +28,7 @@ const TOPIC_LABELS = {
   shapes: '🔷 圖形迷宮',
   data: '📊 數據偵探',
   triangles: '🔺 三角形探險家',
+  'word-problems': '📝 文字題挑戰',
 }
 
 export default function QuizPage() {

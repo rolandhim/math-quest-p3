@@ -39,6 +39,13 @@ const TOPICS = [
     desc: '三角形分類與特性',
     className: 'topic-triangles',
   },
+  {
+    key: 'word-problems',
+    icon: '📝',
+    name: '文字題挑戰',
+    desc: '多步運算應用題',
+    className: 'topic-word-problems',
+  },
 ]
 
 export default function HomePage() {
