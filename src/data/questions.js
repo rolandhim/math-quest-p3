@@ -3976,7 +3976,7 @@ const questions = [
     options: ['等邊三角形', '等腰三角形', '直角三角形', '不等邊三角形'],
     answer: '等邊三角形',
     hint: '三條邊都有 tick 記號，代表三條邊一樣長。',
-    explanation: '三條邊長度相等嘅三角形叫「等邊三角形」。所有角都係 60°。',
+    explanation: '三條邊長度相等嘅三角形叫「等邊三角形」。三邊一樣長，係最對稱嘅三角形。',
     explanationSteps: ['第一步：睇下三角形嘅 tick 記號。', '第二步：三條邊都有記號，代表三邊相等。', '第三步：三邊相等就係等邊三角形。'],
     commonMistake: '有啲小朋友會混淆等邊同等腰。等邊係三邊相等，等腰係兩邊相等。',
     teacherTip: '記住：等邊 = 三邊一樣；等腰 = 兩邊一樣。',
@@ -4078,7 +4078,7 @@ const questions = [
     options: ['三條邊都一樣長', '只有兩條邊一樣長', '三條邊都唔同長', '冇固定關係'],
     answer: '三條邊都一樣長',
     hint: '「等邊」嘅意思係「相等嘅邊」。',
-    explanation: '「等邊」就係話三條邊都相等（一樣長）。等邊三角形嘅三個角都係 60°。',
+    explanation: '「等邊」就係話三條邊都相等（一樣長）。所以等邊三角形三邊一樣長。',
     explanationSteps: ['第一步：「等」嘅意思係相等。', '第二步：「等邊」就係三條邊都相等。', '第三步：所以等邊三角形三邊一樣長。'],
     commonMistake: '有啲小朋友會混淆「等邊」同「等腰」嘅分別。',
     teacherTip: '等邊 = 全部邊相等；等腰 = 兩條邊相等。',
@@ -4227,20 +4227,41 @@ const questions = [
     ]}
   },
 
-  // t_m8 — 三角形內角和
+  // ===== NEW: 多三角形分類題 =====
+
+  // t_m8 — 觀察多個三角形進行分類
   { id: 't_m8', topic: 'triangles', difficulty: 'medium',
-    question: '所有三角形嘅三個內角加埋總共係幾多度？',
-    diagram: { pts: [[100,30],[30,145],[180,145]], equal: [], right: -1 },
-    options: ['180°', '90°', '360°', '270°'],
-    answer: '180°',
-    hint: '任何三角形嘅三個角加埋都係 180°。',
-    explanation: '任何三角形嘅三個內角和都係 180°。正方形有 4 個角（360°），三角形係正方形嘅一半。',
-    explanationSteps: ['第一步：正方形四個角加埋係 360°。', '第二步：三角形係正方形切一半。', '第三步：360° ÷ 2 = 180°。'],
-    commonMistake: '有啲小朋友以為三角形角嘅總和係 360°（同四邊形混淆）。',
-    teacherTip: '三角形內角和 = 180°；四邊形內角和 = 360°。呢個係固定嘅！',
-    guidedReview: { keywords: ['180°', '內角和'], method: '記憶', methodHint: '任何三角形都係 180°。', steps: [
-      { prompt: '正方形嘅內角和係幾多？', type: 'choice', options: ['360°', '180°', '90°', '720°'], answer: '360°', feedback: '啱！360°。' },
-      { prompt: '三角形比正方形少一半角，所以係？', type: 'choice', options: ['180°', '90°', '360°', '270°'], answer: '180°', feedback: '答啱！三角形內角和 = 180°。' }
+    question: '觀察以下各平面圖形（A 至 F），把所有代表答案的英文字母填在橫線上。',
+    diagrams: [
+      // A — 等腰直角三角形
+      { pts: [[50,130],[50,50],[130,130]], equal: [0,2], right: 0, label: 'A' },
+      // B — 不等邊三角形
+      { pts: [[40,135],[120,35],[170,135]], equal: [], right: -1, label: 'B' },
+      // C — 等邊三角形
+      { pts: [[95,30],[35,135],[155,135]], equal: [0,1,2], right: -1, label: 'C' },
+      // D — 不等邊三角形
+      { pts: [[35,135],[110,30],[180,135]], equal: [], right: -1, label: 'D' },
+      // E — 等邊三角形
+      { pts: [[90,25],[30,130],[150,130]], equal: [0,1,2], right: -1, label: 'E' },
+      // F — 等腰直角三角形
+      { pts: [[45,130],[45,45],[130,130]], equal: [0,2], right: 0, label: 'F' },
+    ],
+    options: [
+      '等邊：C,E　等腰直角：A,F　不等邊：B,D',
+      '等邊：A,B　等腰直角：C,D　不等邊：E,F',
+      '等邊：E,F　等腰直角：A,B　不等邊：C,D',
+      '等邊：C,D　等腰直角：E,F　不等邊：A,B',
+    ],
+    answer: '等邊：C,E　等腰直角：A,F　不等邊：B,D',
+    hint: '等邊三角形三邊有 tick 記號；等腰直角三角形有兩邊 tick + □ 直角符號；不等邊三角形冇 tick 冇 □。',
+    explanation: 'A 有兩邊 tick + □ → 等腰直角三角形。B 冇 tick 冇 □ → 不等邊三角形。C 三邊 tick → 等邊三角形。D 冇 tick 冇 □ → 不等邊三角形。E 三邊 tick → 等邊三角形。F 兩邊 tick + □ → 等腰直角三角形。',
+    explanationSteps: ['第一步：逐個三角形睇 tick 記號同 □ 直角符號。', '第二步：三邊 tick = 等邊；兩邊 tick + □ = 等腰直角；冇 tick 冇 □ = 不等邊。', '第三步：C,E 等邊；A,F 等腰直角；B,D 不等邊。'],
+    commonMistake: '有啲小朋友會睇漏直角符號 □，將等腰直角三角形誤當成普通等腰三角形。',
+    teacherTip: '分類三角形三步驟：1. 睇 tick 數量 2. 睇有冇 □ 3. 對照分類。',
+    guidedReview: { keywords: ['多個三角形', '分類', 'A 至 F'], method: '觀察', methodHint: '每個三角形逐個睇 tick 記號同直角符號。', steps: [
+      { prompt: 'A 有兩邊 tick 同 □，係咩三角形？', type: 'choice', options: ['等腰直角三角形', '等邊三角形', '不等邊三角形'], answer: '等腰直角三角形', feedback: '啱！' },
+      { prompt: 'C 有三邊 tick，係咩三角形？', type: 'choice', options: ['等邊三角形', '等腰直角三角形', '不等邊三角形'], answer: '等邊三角形', feedback: '啱！' },
+      { prompt: 'B 冇 tick 冇 □，係咩三角形？', type: 'choice', options: ['不等邊三角形', '等邊三角形', '等腰直角三角形'], answer: '不等邊三角形', feedback: '答啱！' }
     ]}
   },
 
@@ -4264,20 +4285,41 @@ const questions = [
     ]}
   },
 
-  // t_h2 — 已知兩角求第三角
+  // t_h2 — 多三角形分類（升級版）
   { id: 't_h2', topic: 'triangles', difficulty: 'hard',
-    question: '已知三角形兩個角都係 60°，第三個角係幾多度？',
-    diagram: { pts: [[100,30],[20,140],[180,140]], equal: [0,1,2], right: -1 },
-    options: ['60°', '120°', '90°', '30°'],
-    answer: '60°',
-    hint: '三個角加埋 = 180°，180 − 60 − 60 = 60。',
-    explanation: '三角形內角和係 180°。180 − 60 − 60 = 60。所以第三個角都係 60°！呢個係等邊三角形。',
-    explanationSteps: ['第一步：三角形內角和 = 180°。', '第二步：180 − 60 − 60 = 60。', '第三步：第三個角 = 60°，所以係等邊三角形。'],
-    commonMistake: '有啲小朋友會直接答 120°，以為係 180−60=120。要記得減兩個 60°。',
-    teacherTip: '三個角都係 60° 嘅三角形一定係等邊三角形。60+60+60=180。',
-    guidedReview: { keywords: ['60°', '第三角'], method: '計算', methodHint: '三角形內角和係 180°。', steps: [
-      { prompt: '三角形內角和係幾多？', type: 'choice', options: ['180°', '360°', '90°', '200°'], answer: '180°', feedback: '180°！' },
-      { prompt: '180 − 60 − 60 = ？', type: 'choice', options: ['60', '120', '90', '30'], answer: '60', feedback: '答啱！第三角都係 60°。' }
+    question: '觀察以下各平面圖形（A 至 G），把所有代表答案的英文字母填在橫線上。',
+    diagrams: [
+      // A — 等邊三角形
+      { pts: [[80,20],[20,125],[140,125]], equal: [0,1,2], right: -1, label: 'A' },
+      // B — 等腰直角三角形
+      { pts: [[38,125],[38,40],[125,125]], equal: [0,2], right: 0, label: 'B' },
+      // C — 不等邊三角形
+      { pts: [[30,125],[100,25],[165,125]], equal: [], right: -1, label: 'C' },
+      // D — 等腰直角三角形
+      { pts: [[35,120],[35,35],[122,120]], equal: [0,2], right: 0, label: 'D' },
+      // E — 等邊三角形
+      { pts: [[85,22],[25,128],[145,128]], equal: [0,1,2], right: -1, label: 'E' },
+      // F — 不等邊三角形
+      { pts: [[40,128],[115,30],[170,128]], equal: [], right: -1, label: 'F' },
+      // G — 不等邊三角形  
+      { pts: [[28,128],[125,28],[175,128]], equal: [], right: -1, label: 'G' },
+    ],
+    options: [
+      '等邊：A,E　等腰直角：B,D　不等邊：C,F,G',
+      '等邊：B,D　等腰直角：A,E　不等邊：C,F,G',
+      '等邊：A,C　等腰直角：B,E　不等邊：D,F,G',
+      '等邊：E,G　等腰直角：A,D　不等邊：B,C,F',
+    ],
+    answer: '等邊：A,E　等腰直角：B,D　不等邊：C,F,G',
+    hint: '逐個三角形睇：三邊 tick = 等邊；兩邊 tick + □ = 等腰直角；冇 tick 冇 □ = 不等邊。',
+    explanation: 'A 三邊 tick → 等邊。B 兩邊 tick + □ → 等腰直角。C 冇 tick 冇 □ → 不等邊。D 兩邊 tick + □ → 等腰直角。E 三邊 tick → 等邊。F 冇 tick 冇 □ → 不等邊。G 冇 tick 冇 □ → 不等邊。',
+    explanationSteps: ['第一步：每個三角形獨立觀察。', '第二步：對照三種分類標準。', '第三步：A,E 等邊；B,D 等腰直角；C,F,G 不等邊。'],
+    commonMistake: 'G 三角形三條邊都唔同長度，有啲小朋友會以為佢係等腰。其實佢一條 tick 都冇，係不等邊。',
+    teacherTip: '分類技巧：先搵有 □ 嘅（等腰直角），再搵三 tick 嘅（等邊），淨低就係不等邊。',
+    guidedReview: { keywords: ['A 至 G', '分類', '等邊等腰直角不等邊'], method: '觀察', methodHint: '逐個三角形睇 tick 同 □。', steps: [
+      { prompt: 'B 同 D 有兩邊 tick + □，係咩？', type: 'choice', options: ['等腰直角三角形', '等邊三角形', '不等邊三角形'], answer: '等腰直角三角形', feedback: '啱！' },
+      { prompt: 'A 同 E 有三邊 tick，係咩？', type: 'choice', options: ['等邊三角形', '等腰直角三角形', '不等邊三角形'], answer: '等邊三角形', feedback: '啱！' },
+      { prompt: 'C、F、G 冇 tick 冇 □，係咩？', type: 'choice', options: ['不等邊三角形', '等邊三角形', '等腰直角三角形'], answer: '不等邊三角形', feedback: '答啱！' }
     ]}
   },
 

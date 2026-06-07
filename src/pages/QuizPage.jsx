@@ -210,8 +210,8 @@ export default function QuizPage() {
           </span>
         </div>
 
-        {/* Triangle diagram */}
-        {question.diagram && (
+        {/* Triangle diagram — single */}
+        {question.diagram && !question.diagrams && (
           <TriangleDiagram
             pts={question.diagram.pts}
             equal={question.diagram.equal}
@@ -220,6 +220,44 @@ export default function QuizPage() {
             vertexLabels={question.diagram.vertexLabels}
             highlight={question.diagram.highlight}
           />
+        )}
+
+        {/* Triangle diagrams — multiple (grid layout) */}
+        {question.diagrams && (
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 12,
+            marginBottom: 12,
+          }}>
+            {question.diagrams.map((d, idx) => (
+              <div key={idx} style={{ textAlign: 'center' }}>
+                <TriangleDiagram
+                  pts={d.pts}
+                  equal={d.equal || []}
+                  right={d.right !== undefined ? d.right : -1}
+                  sideLabels={d.sideLabels}
+                  vertexLabels={d.vertexLabels}
+                  highlight={d.highlight}
+                  width={140}
+                  height={110}
+                />
+                {d.label && (
+                  <div style={{
+                    marginTop: -4,
+                    fontSize: 14,
+                    fontWeight: 800,
+                    color: '#7C3AED',
+                    fontFamily: 'Georgia, serif',
+                    fontStyle: 'italic',
+                  }}>
+                    {d.label}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         )}
 
         <div className="question-text">{question.question}</div>
