@@ -1,7 +1,9 @@
+import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
 import { useProgress } from '../hooks/useProgress.js'
 import questions from '../data/questions.js'
+import achievementsData from '../data/achievements.js'
 
 const TOPICS = [
   {
@@ -34,6 +36,61 @@ const TOPICS = [
   },
 ]
 
+function BadgesSection({ userProfile }) {
+  const stats = useMemo(() => ({
+    totalStars: userProfile?.totalStars || 0,
+    bestStreak: userProfile?.bestStreak || 0,
+    loginStreak: userProfile?.loginStreak || 0,
+    perfectRounds: userProfile?.perfectRounds || 0,
+    timedBest: userProfile?.timedBest || 0,
+    wrongCleared: userProfile?.wrongCleared || 0,
+    progress: userProfile?.progress || {},
+    masteredTables: userProfile?.masteredTables || [],
+    monsterLevelsCompleted: userProfile?.monsterLevelsCompleted || 0,
+    coloringCompleted: userProfile?.coloringCompleted || 0,
+    multiplicationStreak: userProfile?.multiplicationStreak || 0,
+    multiplicationBestTime: userProfile?.multiplicationBestTime || 999,
+  }), [userProfile])
+
+  const unlocked = useMemo(() =>
+    achievementsData.filter((a) => a.condition(stats)),
+    [stats]
+  )
+
+  const locked = useMemo(() =>
+    achievementsData.filter((a) => !a.condition(stats)),
+    [stats]
+  )
+
+  if (unlocked.length === 0 && locked.length === 0) return null
+
+  return (
+    <div className="home-badges-section">
+      <h3 className="home-badges-title">🏅 我的徽章</h3>
+      <div className="home-badges-grid">
+        {unlocked.map((a) => (
+          <div key={a.id} className="badge-item badge-unlocked">
+            <span className="badge-icon">{a.icon}</span>
+            <div className="badge-info">
+              <div className="badge-name">{a.name}</div>
+              <div className="badge-desc">{a.desc}</div>
+            </div>
+          </div>
+        ))}
+        {locked.map((a) => (
+          <div key={a.id} className="badge-item badge-locked">
+            <span className="badge-icon badge-icon-locked">{a.icon}</span>
+            <div className="badge-info">
+              <div className="badge-name badge-name-locked">{a.name}</div>
+              <div className="badge-desc badge-desc-locked">{a.desc}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function HomePage() {
   const { userProfile, logout } = useAuth()
   const { getTopicProgress } = useProgress()
@@ -59,6 +116,8 @@ export default function HomePage() {
       <div className="stars-rank">
         {level}
       </div>
+
+      <BadgesSection userProfile={userProfile} />
 
       {/* Topic Grid with Progress */}
       <div className="topics-grid">
